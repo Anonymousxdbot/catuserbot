@@ -108,7 +108,7 @@ PRO_STRINGS = [
     "`മാങ്ങാണ്ടി മോറാ 😜`",
 ]
 
-SLAP_TEMPLATES = [
+MSLAP_TEMPLATES = [
     "[{user1}](tg://user?id={SURID}) {victim} ന്റെ തലക്ക് ഒലക്ക കൊണ്ട് അഞ്ചാറു അടി കൊടുത്തു 😪😪 .",
     "[{user1}](tg://user?id={SURID}) ചാണകം വാരി {victim} ന്റെ മോന്തക്ക് എറിഞ്ഞു 🤢🤮 .",
     "️[{user1}](tg://user?id={SURID}) ഓടി വന്ന് {victim} ന്റെ തലയിൽ ചീമുട്ടയെറിഞ്ഞു 🤭🤭😜.",
@@ -305,7 +305,7 @@ async def get_user(event):
     return replied_user
 
 
- def slap(replied_user, event):
+async def slap(replied_user, event):
     user_id = replied_user.id
     first_name = replied_user.first_name
     username = replied_user.username
@@ -314,7 +314,7 @@ async def get_user(event):
     else:
         slapped = f"[{first_name}](tg://user?id={user_id})"
 
-    temp = random.choice(SLAP_TEMPLATES)
+    temp = random.choice(MSLAP_TEMPLATES)
 
     caption = temp.format(user1=DEFAULTUSER, victim=slapped, SURID=SURID)
 
